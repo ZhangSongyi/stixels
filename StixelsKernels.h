@@ -24,6 +24,10 @@
 #include <stdint.h>
 #include "Stixels.hpp"
 #include "configuration.h"
+#include "cuda.h"
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+
 
 __global__ void StixelsKernel(const pixel_t* __restrict__ d_disparity, const StixelParameters params,
 		const float* __restrict__ d_ground_function, const float* __restrict__ d_normalization_ground,

@@ -133,9 +133,9 @@ int main(int argc, char *argv[]) {
 	int vhor;
 
 	// Virtual parameters
-	const float focal = 704.7082f;
-	const float baseline = 0.8f;
-	const float camera_center_y = 384.0f;
+	const float focal = 960.0f;
+	const float baseline = 0.643f;
+	const float camera_center_y = 224.2f;
 	const int column_step = 5;
 	const int width_margin = 0;
 
@@ -198,7 +198,7 @@ int main(int argc, char *argv[]) {
 				stixles.SetDisparityParameters(rows, cols, max_dis, sigma_disparity_object, sigma_disparity_ground, sigma_sky);
 				stixles.SetProbabilities(pout, pout_sky, pground_given_nexist, pobject_given_nexist, psky_given_nexist, pnexist_dis, pground, pobject, psky, pord, pgrav, pblg);
 				stixles.SetModelParameters(column_step, median_step, epsilon, range_objects_z, width_margin);
-				stixles.SetCameraParameters(0.0f, focal, baseline, 0.0f, sigma_camera_tilt, 0.0f, sigma_camera_height, 0.0f);
+				stixles.SetCameraParameters(0, focal, baseline, 0.0f, sigma_camera_tilt, 0.0f, sigma_camera_height, 0.0f);
 				stixles.Initialize();
 				road_estimation.Initialize(camera_center_y, baseline, focal, rows, cols, max_dis);
 

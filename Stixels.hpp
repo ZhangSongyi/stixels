@@ -30,6 +30,9 @@
 #include "configuration.h"
 #include "StixelsKernels.h"
 #include "util.h"
+#include "cuda.h"
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
 
 #ifndef STIXELS_HPP_
 #define STIXELS_HPP_

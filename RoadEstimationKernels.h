@@ -23,6 +23,10 @@
 
 #include <stdint.h>
 #include "configuration.h"
+#include "cuda.h"
+#include "cuda_runtime.h"
+#include "device_launch_parameters.h"
+
 
 __global__ void ComputeHistogram(pixel_t* __restrict__ d_disparity, int* __restrict__ d_vDisp,
 		const int rows, const int cols, const int max_dis);

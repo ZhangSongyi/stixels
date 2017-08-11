@@ -154,42 +154,42 @@ __host__ __device__ __forceinline__ int divUp(int total, int grain) {
     return (total + grain - 1) / grain;
 }
 
-__device__ __forceinline__ uint32_t ld_gbl_ca(const __restrict__ uint32_t *addr) {
+__device__ __forceinline__ uint32_t ld_gbl_ca(const uint32_t* __restrict__ addr) {
 	uint32_t return_value;
 	asm("ld.global.ca.u32 %0, [%1];" : "=r"(return_value) : "l"(addr));
 	return return_value;
 }
 
 
-__device__ __forceinline__ uint64_t ld_gbl_ca(const __restrict__ uint64_t *addr) {
+__device__ __forceinline__ uint64_t ld_gbl_ca(const uint64_t* __restrict__ addr) {
 	uint64_t return_value;
 	asm("ld.global.ca.u64 %0, [%1];" : "=l"(return_value) : "l"(addr));
 	return return_value;
 }
 
-__device__ __forceinline__ uint8_t ld_gbl_cg(const __restrict__ uint8_t *addr) {
+__device__ __forceinline__ uint8_t ld_gbl_cg(const uint8_t* __restrict__ addr) {
 	uint32_t return_value;
 	asm("ld.global.cg.u8 %0, [%1];" : "=r"(return_value) : "l"(addr));
 	return return_value;
 }
 
-__device__ __forceinline__ uint32_t ld_gbl_cs(const __restrict__ uint32_t *addr) {
+__device__ __forceinline__ uint32_t ld_gbl_cs(const uint32_t* __restrict__ addr) {
 	uint32_t return_value;
 	asm("ld.global.cs.u32 %0, [%1];" : "=r"(return_value) : "l"(addr));
 	return return_value;
 }
 
-__device__ __forceinline__ uint64_t ld_gbl_cs(const __restrict__ uint64_t *addr) {
+__device__ __forceinline__ uint64_t ld_gbl_cs(const uint64_t* __restrict__ addr) {
 	uint64_t return_value;
 	asm("ld.global.cs.u64 %0, [%1];" : "=l"(return_value) : "l"(addr));
 	return return_value;
 }
 
-__device__ __forceinline__ void st_gbl_wt(const __restrict__ uint32_t *addr, const uint32_t value) {
+__device__ __forceinline__ void st_gbl_wt(const uint32_t* __restrict__ addr, const uint32_t value) {
 	asm("st.global.wt.u32 [%0], %1;" :: "l"(addr), "r"(value));
 }
 
-__device__ __forceinline__ void st_gbl_cs(const __restrict__ uint32_t *addr, const uint32_t value) {
+__device__ __forceinline__ void st_gbl_cs(const uint32_t* __restrict__ addr, const uint32_t value) {
 	asm("st.global.cs.u32 [%0], %1;" :: "l"(addr), "r"(value));
 }
 
